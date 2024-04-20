@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import {deleteNode} from "../utils/flowSlice";
 import { Handle, Position } from "reactflow";
 import styles from "./ColorfulNode.module.css";
-import close from "/public/close.svg"; 
+import close from "/close.svg"; 
+import {  toggleSidebar } from "./sidebarSlice";
 
 
 const ColorfulNode = ({ id, data, isConnectable }) => {
@@ -22,6 +23,10 @@ const ColorfulNode = ({ id, data, isConnectable }) => {
       className="colorful-node"
       onMouseOver={() => setDeleteIconVisible(true)}
       onMouseOut={() => setDeleteIconVisible(false)}
+      onClick={(e) => {
+        e.stopPropagation();
+        dispatch(toggleSidebar({ isOpen: true, nodeId: id }));
+      }}
     >
       <Handle
         type="target"

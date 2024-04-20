@@ -1,0 +1,36 @@
+.sidebar{
+    width: 20%;
+    height: 100%;
+    background-color: #f0f0f0;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hideSidebar{
+    display: none;
+}
+
+.label{
+    color: #8e7ee8;
+    margin-bottom: 2rem;
+}
+
+.textArea{
+    height: 100px;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.saveButton{
+    border: 1px solid #3a4bcd;
+    color: #fff;
+    padding: .25rem .5rem;
+    background-color: #3a4bcd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}

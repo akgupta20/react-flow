@@ -31,18 +31,19 @@ export const flow = createSlice({
         type: "colorfulNode",
         data: id,
         position: {
-          x: 80 + (Math.random() - 0.5) * 50,
-          y: 200 + (Math.random() - 0.5) * 50,
+          x: 400 + (Math.random() - 0.5) * 50,
+          y: 300 + (Math.random() - 0.5) * 50,
         },
       };
       state.nodes.push(newNode);
     },
 
     updateNode: (state, action) => {
-      const { id, label, bgColor } = action.payload;
+      const { id, data } = action.payload;
+      console.log(action.payload)
       state.nodes = state.nodes.map((node) => {
         if (node.id === id) {
-          node.data = { label: label };
+          node.data = data;
         }
         return node;
       });
@@ -60,7 +61,7 @@ export const flow = createSlice({
       state.edges = applyEdgeChanges(action.payload, state.edges);
     },
     onConnect: (state, action) => {
-      state.edges = addEdge(action.payload, state.edges);
+      state.edges = addEdge({...action.payload, type:'buttonedge'}, state.edges);
     },
   },
 });

@@ -11,8 +11,14 @@ import {
 
 import "reactflow/dist/style.css";
 import ColorfulNode from "../utils/ColorfulNode";
+import ButtonEdge from "../utils/ButtonEdge";
+
 const nodeTypes = {
   colorfulNode: ColorfulNode,
+};
+
+const edgeTypes = {
+  buttonedge: ButtonEdge,
 };
 
 const Content = () => {
@@ -26,9 +32,10 @@ const Content = () => {
         nodes={nodes}
         onNodesChange={(e) => dispatch(onNodesChange(e))}
         edges={edges}
-        onEdgesChange={(e) => dispatchonEdgesChange(e)}
+        onEdgesChange={(e) => dispatch(onEdgesChange(e))}
         onConnect={(e) => dispatch(onConnect(e))}
         minZoom={true}
+        edgeTypes={edgeTypes}
         nodeTypes={nodeTypes}
       >
         <MiniMap />
