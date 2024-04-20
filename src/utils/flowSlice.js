@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import { addEdge, applyNodeChanges, applyEdgeChanges } from "reactflow";
 
 export const flow = createSlice({
@@ -36,6 +37,7 @@ export const flow = createSlice({
         },
       };
       state.nodes.push(newNode);
+      toast.success(`${id} created scuccessfully!`);
     },
 
     updateNode: (state, action) => {
@@ -47,11 +49,13 @@ export const flow = createSlice({
         }
         return node;
       });
+      toast.success(`Node updated successfully!`);
     },
 
     deleteNode: (state, action) => {
       const { id } = action.payload;
       state.nodes = state.nodes.filter((node) => node.id !== id);
+      toast.success(`Node deleted successfully!`);
     },
 
     onNodesChange: (state, action) => {
@@ -59,9 +63,11 @@ export const flow = createSlice({
     },
     onEdgesChange: (state, action) => {
       state.edges = applyEdgeChanges(action.payload, state.edges);
+      toast.success(`Edge deleted successfully!`)
     },
     onConnect: (state, action) => {
-      state.edges = addEdge({...action.payload, type:'buttonedge'}, state.edges);
+      state.edges = addEdge({ ...action.payload, type: 'buttonedge' }, state.edges);
+      toast.success(`Edge created successfully!`)
     },
   },
 });

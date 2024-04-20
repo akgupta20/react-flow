@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addNode } from '../utils/flowSlice';
+import { toast } from 'react-toastify';
 
 const CreateNode = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,9 @@ const CreateNode = () => {
         zIndex: 4
       
       }}>
-      <button onClick={(e) => dispatch(addNode())}
+      <button onClick={(e) => {
+        dispatch(addNode());
+      }}
         style={
           {
             padding: '10px',

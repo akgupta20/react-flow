@@ -1,14 +1,23 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   return (
-    <div className={styles.navbar}>
-      <span className={styles.navbarText}>
-        Frontend Task ReactFlow Render -<span style={{
-          fontWeight: 'bold',
-        }}> Akash Gupta</span>
-      </span>
+    <div className={styles.nav}>
+      <div className={styles.navbar}>
+        <span className={styles.navbarText}>
+          ReactFlow Render - {""}
+          <span
+            className={styles.name}
+          >
+             Akash Gupta
+          </span>
+        </span>
+      </div>
+      <ToastContainer
+        autoClose={ 2000} />
     </div>
   );
 };

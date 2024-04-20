@@ -14,6 +14,7 @@ const ColorfulNode = ({ id, data, isConnectable }) => {
 
   const removeNode = (e) => {
     console.log("deleteNode");
+    e.stopPropagation(); // To prevent the event from bubbling up to the parent element
     console.log(id);
     dispatch(deleteNode({ id: id }));
   };

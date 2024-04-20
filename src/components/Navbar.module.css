@@ -1,16 +1,22 @@
+.nav{
+  background-color: #f1fff4;
+}
+
 .navbar {
   font-size: 20px;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .navbarText {
-    font-size: 20px;
-    padding: 1rem 2rem;
-    background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to right, #6366f1, #9f7aea, #f03e9a);
-    font-family: "Philosopher", sans-serif;
-  }
-  
+  font-size: 20px;
+  padding: 1rem 2rem;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #6366f1, #9f7aea, #f03e9a);
+  font-family: "Roboto", sans-serif;
+}
+
+.name{
+  font-weight: 600;
+}
