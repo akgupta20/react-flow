@@ -5,9 +5,11 @@ import appStore from "./utils/appStore";
 
 const App = () => {
   return (
-    <Provider store={appStore}>
-      <Outlet />
-    </Provider>
+    <div style={{ backgroundColor: "#fff", height: "100vh" }}>
+      <Provider store={appStore}>
+        <Outlet />
+      </Provider>
+    </div>
   );
 };
 

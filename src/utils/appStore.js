@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import nodeSlice from "./nodeSlice";
+import flowSlice from "./flowSlice";
+import sidebarSlice from "./sidebarSlice";
 
 const appStore = configureStore({
-    reducer: {
-      node: nodeSlice,
+  reducer: {
+    flow: flowSlice,
+    sidebar: sidebarSlice,
   },
 });
 
